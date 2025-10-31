@@ -1,0 +1,486 @@
+:root {
+  /* Refined Color Palette with Deeper Hues */
+  --primary: #8a2be2; /* A majestic, slightly darker electric purple */
+  --secondary: #5e17eb; /* A deeper, more intense purple for contrast and interaction */
+  --tertiary: #c28b3e; /* A richer, aged gold for primary accents */
+  --accent: #ffd700; /* A vibrant, pure gold for highlights and pop */
+  --background: #fdfdfd; /* A very subtle, warm off-white for a sophisticated base */
+  --text: #2c2c2c; /* Near-black for crisp readability */
+  --text-light: #6a6a6a; /* A medium grey for secondary text */
+
+  /* Advanced Gradients for Depth and Luxury */
+  --gradient-purple: linear-gradient(
+    135deg,
+    #a052eb 0%,
+    #7a28bf 100%
+  ); /* Deep purple gradient */
+  --gradient-gold: linear-gradient(
+    135deg,
+    #ffd700 0%,
+    #c28b3e 100%
+  ); /* Rich gold gradient */
+  --gradient-hover: linear-gradient(
+    135deg,
+    #6a057f 0%,
+    #8d3ed1 100%
+  ); /* Darker purple gradient on hover */
+
+  /* Enhanced Shadows for a more premium feel */
+  --shadow-sm: 0 4px 10px rgba(0, 0, 0, 0.07);
+  --shadow-md: 0 8px 20px rgba(0, 0, 0, 0.1);
+  --shadow-lg: 0 18px 50px rgba(0, 0, 0, 0.15); /* More pronounced, soft shadow */
+
+  /* Standardized Transitions for consistency */
+  --transition-fast: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-medium: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* RGB values for transparent colors */
+  --primary-rgb: 138, 43, 226; /* RGB of #8A2BE2 */
+  --tertiary-rgb: 194, 139, 62; /* RGB of #C28B3E */
+}
+
+.custom-navbar {
+  background: var(--background);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.06); /* Subtler border */
+  box-shadow: var(--shadow-lg);
+  padding: 0.9rem 0; /* Slightly more padding for a loftier feel */
+  transition: var(--transition-medium);
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.brand-title {
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2.1rem; /* Slightly larger brand title */
+  background: var(--gradient-gold); /* Prominent gold gradient */
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  letter-spacing: 0.7px; /* Increased letter-spacing */
+  position: relative;
+  padding-right: 2.2rem; /* Adjusted padding */
+}
+
+.brand-title::after {
+  content: "✧"; /* A softer, more elegant sparkle character */
+  position: absolute;
+  right: 0;
+  top: -2px; /* Adjusted position */
+  color: var(--accent); /* Pure gold sparkle */
+  font-size: 1.6rem; /* Larger sparkle */
+  animation: sparkle 1.8s infinite alternate ease-in-out; /* Smoother, alternating sparkle */
+}
+
+.nav-link {
+  color: var(--text) !important;
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  padding: 0.6rem 1.3rem !important; /* Slightly more generous padding */
+  margin: 0 0.8rem !important; /* Adjusted margin */
+  transition: var(--transition-medium);
+  position: relative;
+  overflow: hidden; /* Hide overflow for link hover effect */
+}
+
+/* Enhanced Nav Link Hover Effect */
+.nav-link::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: rgba(var(--primary-rgb), 0.05); /* Very subtle purple wash */
+  transition: var(--transition-medium);
+  z-index: -1;
+}
+
+.nav-link:hover::before {
+  left: 0;
+}
+
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 2px;
+  background: var(--primary); /* Underline uses the main purple */
+  transition: var(--transition-medium);
+}
+
+.nav-link:hover::after {
+  width: 100%;
+  left: 0;
+}
+
+/* --- Search Bar & Icons --- */
+.search-container {
+  position: relative;
+  margin: 0 1.8rem; /* Increased margin for more breathing room */
+  display: flex;
+  align-items: center;
+}
+
+.search-input {
+  border-radius: 30px;
+  padding: 0.8rem 1.8rem 0.8rem 3rem !important; /* More generous padding for comfort */
+  border: 1px solid rgba(var(--primary-rgb), 0.2); /* Softer initial border */
+  background: rgba(255, 255, 255, 0.98); /* Almost opaque for clarity */
+  min-width: 280px; /* Slightly wider default */
+  width: 100%;
+  max-width: 380px; /* Increased max-width */
+  transition: var(--transition-medium);
+  font-size: 1rem; /* Slightly larger text */
+  color: var(--text);
+  box-shadow: var(--shadow-sm); /* More visible initial shadow */
+}
+
+.search-input::placeholder {
+  color: var(--text-light); /* Lighter placeholder text */
+  opacity: 0.8;
+}
+
+.search-input:focus {
+  border-color: var(--primary);
+  box-shadow: 0 0 0 5px rgba(var(--primary-rgb), 0.35); /* Stronger, more inviting focus ring */
+  background: white;
+  outline: none;
+}
+
+.search-icon {
+  color: var(--primary); /* Search icon uses the main purple */
+  position: absolute;
+  left: 1.1rem; /* Adjusted for larger padding */
+  pointer-events: none;
+  z-index: 1;
+  font-size: 1.3rem; /* Larger icon */
+}
+
+.cart-icon {
+  margin-right: 1.8rem; /* Increased margin */
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.cart-icon:hover {
+  transform: scale(1.05); /* Subtle scale on hover */
+}
+
+.cart-symbol {
+  color: var(--primary); /* Cart symbol uses the main purple */
+  font-size: 1.7rem; /* Even larger cart icon */
+  transition: var(--transition-fast);
+}
+
+.cart-symbol:hover {
+  color: var(--secondary); /* Darker purple on hover */
+}
+
+.cart-badge {
+  background: var(--accent); /* Badge uses the pure gold accent */
+  color: white;
+  border-radius: 50%;
+  padding: 0.25em 0.55em; /* Slightly adjusted padding for better fit */
+  font-size: 0.7em; /* Slightly smaller base font size for the number */
+  position: absolute;
+  top: -5px; /* Move it slightly down from the top edge */
+  right: -8px; /* Move it slightly to the left from the right edge */
+  min-width: 22px; /* A bit smaller min-width */
+  height: 22px; /* Fixed height for perfect circle */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  line-height: 1;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Slightly softer shadow */
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px; /* Slightly larger avatar */
+  height: 44px; /* Slightly larger avatar */
+  border-radius: 50%;
+  background: var(--gradient-purple); /* User avatar uses the purple gradient */
+  color: white;
+  font-weight: 600;
+  font-size: 1.2rem; /* Larger font for initial */
+  text-transform: uppercase;
+  cursor: pointer;
+  box-shadow: var(--shadow-md); /* More prominent initial shadow */
+  transition: var(--transition-medium);
+  border: 2px solid transparent; /* Subtle border for interaction */
+}
+
+.user-profile:hover {
+  transform: translateY(-3px); /* More pronounced lift */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.25); /* Stronger hover shadow */
+  border-color: var(--accent); /* Gold border on hover */
+}
+
+.custom-dropdown .dropdown-menu {
+  border: 1px solid rgba(var(--primary-rgb), 0.2); /* More defined dropdown border */
+  box-shadow: var(--shadow-lg); /* Larger dropdown shadow */
+  border-radius: 10px; /* More rounded corners */
+  padding: 0.6rem 0; /* Increased padding */
+  animation: slideDown 0.3s ease-out;
+  min-width: 12rem; /* Slightly wider dropdown */
+}
+
+.dropdown-item {
+  color: var(--text) !important;
+  font-family: "Inter", sans-serif;
+  padding: 0.8rem 1.6rem; /* More generous padding */
+  transition: var(--transition-fast);
+  display: flex;
+  align-items: center;
+  font-size: 0.95rem; /* Slightly larger text */
+}
+
+.dropdown-item i {
+  color: var(--primary); /* Icons in dropdown use main purple */
+  font-size: 1.2em; /* Larger icons */
+  margin-right: 0.75rem; /* More spacing */
+}
+
+.dropdown-item:hover {
+  background: rgba(
+    var(--primary-rgb),
+    0.1
+  ); /* More noticeable hover background */
+  color: var(--primary) !important;
+  transform: translateX(5px); /* Subtle slide effect on hover */
+}
+
+.dropdown-divider {
+  border-top: 1px solid rgba(0, 0, 0, 0.12); /* More defined divider */
+  margin: 0.6rem 0; /* More spacing */
+}
+
+.btn-login {
+  background: var(
+    --gradient-purple
+  ); /* Login button uses the purple gradient */
+  color: white !important;
+  border-radius: 30px;
+  padding: 0.75rem 2rem; /* Larger and wider button */
+  font-weight: 700; /* Bolder text */
+  transition: var(--transition-medium);
+  border: none;
+  box-shadow: 0 8px 20px rgba(var(--primary-rgb), 0.4); /* Stronger initial shadow */
+}
+
+.btn-login:hover {
+  background: var(--gradient-hover); /* Darker purple gradient on hover */
+  transform: translateY(-4px); /* More pronounced lift */
+  box-shadow: 0 12px 30px rgba(var(--primary-rgb), 0.6); /* Even stronger hover shadow */
+}
+
+.custom-toggler {
+  border: none;
+  padding: 0;
+  transition: var(--transition-fast);
+}
+
+.custom-toggler:hover {
+  opacity: 0.8;
+}
+
+.custom-toggler:focus {
+  box-shadow: none;
+}
+
+/* Keyframe Animations */
+@keyframes sparkle {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(0deg);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.1) rotate(180deg); /* Slightly larger sparkle at peak */
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) rotate(360deg);
+  }
+}
+@keyframes bounce {
+  0%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40% {
+    transform: translateY(-12px); /* Slightly more bounce */
+  }
+  60% {
+    transform: translateY(-6px);
+  }
+}
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-15px); /* Starts higher up */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background: rgba(255, 255, 255, 0.99); /* Almost opaque for mobile menu */
+    backdrop-filter: blur(25px); /* Stronger blur */
+    padding: 1.5rem; /* More padding for mobile menu */
+    border-radius: 10px; /* More rounded corners */
+    margin-top: 0.75rem; /* More spacing */
+    box-shadow: var(--shadow-lg);
+  }
+
+  .nav-link {
+    margin: 0.75rem 0 !important; /* More vertical spacing */
+    padding: 1rem 1.5rem !important; /* Larger touch targets */
+    font-size: 1.1rem; /* Larger font on mobile */
+  }
+
+  .nav-link::before {
+    display: none; /* Hide hover effect on mobile */
+  }
+
+  .search-container {
+    margin: 1.5rem 0; /* More spacing */
+    width: 100%;
+  }
+
+  .search-input {
+    min-width: unset;
+    width: 100%;
+    max-width: none;
+  }
+
+  .auth-buttons {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.5rem; /* More spacing */
+  }
+}
+
+@media (max-width: 575px) {
+  .brand-title {
+    font-size: 1.6rem; /* Adjusted for smaller screens */
+    padding-right: 1.8rem;
+  }
+  .brand-title::after {
+    font-size: 1.2rem;
+  }
+
+  .search-input {
+    padding: 0.6rem 1.2rem 0.6rem 2.5rem !important; /* Tighter padding for small screens */
+    font-size: 0.9rem;
+  }
+  .search-icon {
+    left: 0.8rem;
+    font-size: 1.1rem;
+  }
+
+  .cart-icon {
+    margin-right: 1rem;
+  }
+  .cart-symbol {
+    font-size: 1.4rem;
+  }
+  .cart-badge {
+    top: -4px;
+    right: -6px;
+    min-width: 18px;
+    height: 18px;
+    font-size: 0.7em;
+  }
+
+  .user-profile {
+    width: 38px;
+    height: 38px;
+    font-size: 1rem;
+  }
+
+  .btn-login {
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 400px) {
+  .brand-title {
+    font-size: 1.4rem;
+    padding-right: 1.5rem;
+  }
+  .brand-title::after {
+    font-size: 1rem;
+  }
+
+  .search-input {
+    padding: 0.5rem 0.8rem 0.5rem 2.2rem !important;
+    font-size: 0.85rem;
+  }
+  .search-icon {
+    left: 0.6rem;
+    font-size: 1rem;
+  }
+
+  .nav-link {
+    padding: 0.6rem 1rem !important;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .brand-title {
+    font-size: 1.1rem;
+    letter-spacing: 0.2px;
+  }
+  .brand-title::after {
+    font-size: 0.9rem;
+    right: -5px;
+  }
+
+  .search-input {
+    padding: 0.4rem 0.5rem 0.4rem 1.8rem !important;
+    font-size: 0.75rem;
+  }
+  .search-icon {
+    left: 0.5rem;
+    font-size: 0.9rem;
+  }
+  .cart-symbol {
+    font-size: 1.2rem;
+  }
+  .cart-badge {
+    min-width: 16px;
+    height: 16px;
+    font-size: 0.6em;
+  }
+  .user-profile {
+    width: 34px;
+    height: 34px;
+    font-size: 0.9rem;
+  }
+  .btn-login {
+    padding: 0.5rem 1.2rem;
+    font-size: 0.8rem;
+  }
+}

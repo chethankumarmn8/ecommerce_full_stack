@@ -1,0 +1,21 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+#root {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+}
+.gradient-text {
+  background: linear-gradient(45deg, #f9d923, #f29f05);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.gold-text {
+  color: #f9d923;
+}

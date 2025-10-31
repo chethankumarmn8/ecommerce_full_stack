@@ -1,0 +1,71 @@
+{
+  "name": "vividhands-frontend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@hookform/resolvers": "^3.3.1",
+    "@stripe/react-stripe-js": "^3.7.0",
+    "@stripe/stripe-js": "^7.3.0",
+    "@testing-library/jest-dom": "^6.4.2",
+    "@testing-library/react": "^14.2.1",
+    "@testing-library/user-event": "^14.5.2",
+    "animate.css": "^4.1.1",
+    "axios": "^1.8.5",
+    "bootstrap": "^5.3.3",
+    "date-fns": "^4.1.0",
+    "formik": "^2.4.5",
+    "framer-motion": "^10.18.0",
+    "jwt-decode": "^4.0.0",
+    "leaflet": "^1.9.4",
+    "moment": "^2.30.1",
+    "razorpay": "^2.9.6",
+    "react": "^18.2.0",
+    "react-bootstrap": "^2.10.2",
+    "react-bootstrap-icons": "^1.11.5",
+    "react-dom": "^18.2.0",
+    "react-hook-form": "^7.49.4",
+    "react-icons": "^5.5.0",
+    "react-lazy-load-image-component": "^1.6.3",
+    "react-leaflet": "^4.2.1",
+    "react-loading-skeleton": "^3.5.0",
+    "react-modal-image": "^2.6.0",
+    "react-razorpay": "^3.0.1",
+    "react-router-dom": "^6.22.3",
+    "react-scripts": "5.0.1",
+    "react-slick": "^0.29.0",
+    "react-toastify": "^9.1.3",
+    "recharts": "^2.15.3",
+    "slick-carousel": "^1.8.1",
+    "styled-components": "^6.1.8",
+    "web-vitals": "^2.1.4",
+    "yup": "^1.3.3"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test",
+    "eject": "react-scripts eject"
+  },
+  "eslintConfig": {
+    "extends": [
+      "react-app",
+      "react-app/jest"
+    ]
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "proxy": "http://localhost:8080",
+  "devDependencies": {
+    "react-app-rewired": "^2.2.1"
+  }
+}

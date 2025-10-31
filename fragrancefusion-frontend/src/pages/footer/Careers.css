@@ -1,0 +1,51 @@
+/* Custom Animations */
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-slideup {
+  animation: slideUp 1s ease-out;
+}
+.delay-1 {
+  animation-delay: 0.3s;
+}
+
+/* Parallax Section */
+.hero-section {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.7), url("../assets/8.jpeg")); */
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+/* Value Carousel */
+.values-carousel .carousel-control-prev,
+.values-carousel .carousel-control-next {
+  width: 5%;
+}
+
+/* Timeline */
+.timeline {
+  position: relative;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.timeline::after {
+  content: "";
+  position: absolute;
+  width: 6px;
+  background-color: #ffc107;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  margin-left: -3px;
+}
+
+/* Add remaining CSS styles for other components */
